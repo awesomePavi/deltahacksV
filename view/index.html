@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="index.js"></script>
+    <script src="index.js"></script>
     <title>Delta Hacks 5</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -14,17 +14,19 @@
     <h1>The HyperCare Project (but actually a non-dumb name)</h1>
     <div class="login-page">
       <div class="form">
-        <form class="register-form">
-          <input type="text" placeholder="name"/>
-          <input type="password" placeholder="password"/>
-          <input type="text" placeholder="email address"/>
+
+        <form id="register-form">
+          <input type="text" name="username" placeholder="username"/>
+          <input type="password" name="password" placeholder="password"/>
+          <input type="text" name="email" placeholder="email address"/>
           <button>create</button>
           <p class="message">Already registered? <a href="#">Sign In</a></p>
         </form>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-          <button>login</button>
+
+        <form id="login-form">
+          <input type="text" name="username" placeholder="username"/>
+          <input type="password" name="password" placeholder="password"/>
+          <button id="login-btn">login</button>
           <p class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
       </div>
