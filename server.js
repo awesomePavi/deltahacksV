@@ -9,7 +9,7 @@ var io = require('socket.io')(http);
 var users = [];
 var messagelogs = [];
 
-var {allUsers,authenticate,registerPatient} = require(__dirname + './database_access.js');
+var {allUsers,authenticate,registerPatient} = require(__dirname + '/database_access.js');
 
 //response for get response for applet
 app.use(express.static('public'));
