@@ -6,12 +6,30 @@ var http = require('http').Server(app);
 //websockets, on establised http listener
 var io = require('socket.io')(http);
 
-var dbAccess = require(__dirname + '/database_access.js');
+var users = [];
+var messagelogs = [];
+
+var {allUsers,authenticate,registerPatient} = require(__dirname + './database_access.js');
 
 //response for get response for applet
 app.use(express.static('public'));
 app.get('/users', function(req, res){
-    var result = dbAccess();
+    var result = allUsers();
+    res.send(result);
+});
+
+app.post('/authenticate', function(req, res){
+    var result = authenticate(req.query.username, req.query.password);
+    res.send(result);
+});
+
+app.post('/register', function(req, res){
+    var result = registerPatient(req.query.email, req.query.password,req.query.name,req.query.dob,req.query.sin);
+    res.send(result);
+});
+
+app.post('/registerDoctor', function(req, res){
+    var result = registerPatient(req.query.email, req.query.password,req.query.name,req.query.dob,req.query.sin,req.query.doctorNum);
     res.send(result);
 });
 
