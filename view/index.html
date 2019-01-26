@@ -11,10 +11,11 @@
 
   <body onload="">
     <h1>The HyperCare Project (but actually a non-dumb name)</h1>
+
     <form id="login-form">
       <h2>Login</h2>
       <div class="form-group">
-        <input class="form-control" type="text" name="username" placeholder="username"/>
+        <input class="form-control" type="text" name="email" placeholder="email"/>
       </div>
       <div class="form-group">
         <input class="form-control" type="password" name="password" placeholder="password"/>
@@ -26,15 +27,21 @@
     <form id="register-form" class="hidden">
       <h2>Register</h2>
       <div class="form-group">
-        <input class="form-control" type="text" name="username" placeholder="username"/>
+        <input class="form-control" type="text" name="email" placeholder="email"/>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="name" placeholder="full name"/>
       </div>
       <div class="form-group">
         <input class="form-control" type="password" name="password" placeholder="password"/>
       </div>
       <div class="form-group">
-        <input class="form-control" type="text" name="email" placeholder="email address"/>
+        <input class="form-control" type="text" name="dob" placeholder="date of birth"/>
       </div>
-      <button class="btn btn-primary">Register</button>
+      <div class="form-group">
+        <input class="form-control" type="text" name="sin" placeholder="SIN number"/>
+      </div>
+      <button class="btn btn-primary">Sign In</button>
       <p>Already registered? <a class="form-toggle" href="#">Sign In</a></p>
     </form>
   </div>
