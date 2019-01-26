@@ -1,0 +1,22 @@
+.hidden {
+  display: none;
+}
+
+body {
+  background-color: lightblue;
+}
+
+form {
+  margin-top: 30px;
+  padding: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  form {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
