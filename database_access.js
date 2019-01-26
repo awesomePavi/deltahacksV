@@ -2,7 +2,8 @@ var fs = require('fs');
 var SQL = require('./node_modules/sql.js/js/sql');
 var passwordHash = require('password-hash');
 
-var filebuffer = fs.readFileSync('./test.db');
+var SQL = require(__dirname + '/node_modules/sql.js/js/sql');
+var filebuffer = fs.readFileSync(__dirname + '/test.db');
 
 // Load the db
 var db = new SQL.Database(filebuffer);
