@@ -6,7 +6,7 @@ var http = require('http').Server(app);
 //websockets, on establised http listener
 var io = require('socket.io')(http);
 
-var dbAccess = require('./database_access.js');
+var dbAccess = require(__dirname + '/database_access.js');
 
 //response for get response for applet
 app.use(express.static('public'));
