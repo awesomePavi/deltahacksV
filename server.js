@@ -10,7 +10,7 @@ var messagelogs = [];
 
 //response for get response for applet
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/view/index.html');
 });
 
 //handle all connections, and what happens
