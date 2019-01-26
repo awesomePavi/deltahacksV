@@ -1,5 +1,6 @@
 //express builds app
-var app = require('express')();
+var express = require("express");
+var app = express();
 //http communications
 var http = require('http').Server(app);
 //websockets, on establised http listener
@@ -8,9 +9,13 @@ var io = require('socket.io')(http);
 var users = [];
 var messagelogs = [];
 
+var dbAccess = require('./database_access.js');
+
 //response for get response for applet
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+app.use(express.static('public'));
+app.get('/users', function(req, res){
+    var result = dbAccess();
+    res.send(result);
 });
 
 //handle all connections, and what happens
