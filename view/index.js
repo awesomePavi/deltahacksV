@@ -7,24 +7,51 @@ function setup() {
     loginForm.addEventListener('submit', event => {
         event.preventDefault();
         const form = event.target;
-        login(form.username.value, form.password.value);
+        const values = formValues(form);
+        login(values);
     });
 
     const registerForm = document.getElementById('register-form');
     registerForm.addEventListener('submit', event => {
         event.preventDefault();
         const form = event.target;
-        register(form.username.value, form.password.value, form.email.value);
+        const values = formValues(form);
+        register(values);
     });
+
+    const toggleLinks = document.querySelectorAll('.form-toggle');
+    toggleLinks.forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        toggleForms()
+    }));
 }
 
-function login(username, password) {
+function formValues(form) {
+    let value = {};
+    for (const input of form) {
+        if (input.name) {
+            value[input.name] = form[input.name].value;
+        }
+    }
+    return value;
+}
+
+// Change 
+function login({username, password}) {
     console.log(`Username: ${username}`);
     console.log(`Password: ${password}`);
 }
 
-function register(username, password, email) {
+function register({username, password, email}) {
     console.log(`Username: ${username}`);
     console.log(`Password: ${password}`);
     console.log(`Email: ${email}`);
+}
+// change
+
+function toggleForms() {
+    const forms = document.querySelectorAll('form');
+    for (const form of forms) {
+        form.classList.toggle('hidden');
+    }
 }
